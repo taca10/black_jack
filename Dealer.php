@@ -1,6 +1,5 @@
 <?php
-class Player
+class Dealer
 {
   public $hand = array();
-
 }

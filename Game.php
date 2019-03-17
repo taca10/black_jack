@@ -2,12 +2,20 @@
 
 class Game
 {
-public $userPoints = 0;
-public $dealerPoints = 0;
-public $dealerCard = array();
+  public $userPoints = 0;
+  public $dealerPoints = 0;
+  public $dealerCard = array();
 
   public function start($deck)
   {
+    // $player = new Player();
+    // $dealer = new Dealer();
+    // $player->hand = "あなたの引いたカードは" . $deck->drawCard() . "です\n";
+    // $player->hand = "あなたの引いたカードは" . $deck->drawCard() . "です\n";
+
+    // $dealer->hand = "ディーラーの引いたカードは" . $deck->drawCard() . "です\n";
+    // $dealer->hand = "ディーラーの２枚目のカードはわかりません\n";
+
     $messages = [];
     $messages[] = "あなたの引いたカードは" . $deck->drawCard() . "です\n";
     $messages[] = "あなたの引いたカードは" . $deck->drawCard() . "です\n";
@@ -88,12 +96,15 @@ public $dealerCard = array();
 
   function judgement() {
     if ($this->userPoints > $this->dealerPoints) {
-      echo "あなたの勝ちです";
-    }else if($this->dealerPoints >= 21) {
-      echo "あたたの勝ちです";
-    }else if($this->userPoints < $this->dealerPoints) {
-      echo "ディーラーの勝ちです";
-    }else {
+      return "あなたの勝ちです";
+    }
+    if($this->dealerPoints >= 21) {
+      return "あたたの勝ちです";
+    }
+    if($this->userPoints < $this->dealerPoints) {
+      return "ディーラーの勝ちです";
+    }
+    if($this->userPoints == $this->dealerPoints) {
       echo "引き分けです";
     }
   }
