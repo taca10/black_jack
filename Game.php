@@ -2,28 +2,46 @@
 
 class Game
 {
-  public $userPoints = 0;
-  public $dealerPoints = 0;
-  public $dealerCard = array();
 
-  public function start($deck)
+  public $deck;
+  public $player;
+  public $dealer;
+
+  public function __construct($deck, $player, $dealer) {
+    $this->deck = $deck;
+    $this->player = $player;
+    $this->dealer = $dealer;
+  }
+
+  public function start()
   {
-    // $player = new Player();
-    // $dealer = new Dealer();
-    // $player->hand = "あなたの引いたカードは" . $deck->drawCard() . "です\n";
-    // $player->hand = "あなたの引いたカードは" . $deck->drawCard() . "です\n";
+    $this->player->hand[] = $this->deck->drawCard();
+    $this->player->hand[] = $this->deck->drawCard();
+    $this->dealer->hand[] = $this->deck->drawCard();
+    $this->dealer->hand[] = $this->deck->drawCard();
 
-    // $dealer->hand = "ディーラーの引いたカードは" . $deck->drawCard() . "です\n";
-    // $dealer->hand = "ディーラーの２枚目のカードはわかりません\n";
+    foreach ($this->player->hand as $hands) {
+      echo "あなたの引いたカードは" . $hands . "です\n";
+    }
 
-    $messages = [];
-    $messages[] = "あなたの引いたカードは" . $deck->drawCard() . "です\n";
-    $messages[] = "あなたの引いたカードは" . $deck->drawCard() . "です\n";
-    $messages[] = "ディーラーの引いたカードは" . $deck->drawCard() . "です\n";
-    $messages[] = "ディーラーの２枚目のカードはわかりません\n";
+    for($i=0; $i<count($this->dealer->hand); $i++) {
+      if($i == 0) {
+        echo "ディーラーの引いたカードは" . $this->dealer->hand[$i] . "です\n";
+      }
+      if($i == 1) {
+        echo "ディーラーの引いたカードはわかりません\n";
+      }
+    }
 
-    $this->dealerCard[] = $deck->drawCard();
-    return $messages;
+    // $messages = [];
+    // $messages[] = "あなたの引いたカードは" . $deck->drawCard() . "です\n";
+    // $messages[] = "あなたの引いたカードは" . $deck->drawCard() . "です\n";
+    // $messages[] = "ディーラーの引いたカードは" . $deck->drawCard() . "です\n";
+    // $messages[] = "ディーラーの２枚目のカードはわかりません\n";
+    // printf("あなたの引いたカードは" . $deck->drawCard() . "です");
+
+    // $this->dealerCard[] = $deck->drawCard();
+    // return $messages;
   }
 
   function convertToScore($messages) {
