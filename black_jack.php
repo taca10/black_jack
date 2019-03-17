@@ -20,7 +20,6 @@ $game->start();
 
 $card = new Card($player, $dealer);
 
-
 // $player = new Player();
 
 // messages返すのは微妙そう。。。。
