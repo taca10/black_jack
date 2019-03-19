@@ -19,6 +19,7 @@ $game = new Game($deck, $player, $dealer);
 $game->start();
 
 $card = new Card($player, $dealer);
+$card->getScore($player);
 
 // $player = new Player();
 
