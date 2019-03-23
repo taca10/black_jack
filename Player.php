@@ -1,6 +1,5 @@
 <?php
 class Player
 {
-  public $hand = array();
-
+    public $hand = array();
 }

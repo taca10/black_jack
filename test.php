@@ -1,4 +1,4 @@
-150を足しても、150を引いても、平方数になる自然数を求めよ
+<!-- 150を足しても、150を引いても、平方数になる自然数を求めよ -->
 
 <?php
 
@@ -19,8 +19,8 @@
 //   }
 // }
 
-$time = 46979;
-$hours = floor( $time / 3600 );
-$minutes = floor( ( $time / 60 ) % 60 );
-$seconds = $time % 60;
-echo $hours . ":" . $minutes . ":" . $seconds ;
+// $time = 46979;
+// $hours = floor( $time / 3600 );
+// $minutes = floor( ( $time / 60 ) % 60 );
+// $seconds = $time % 60;
+// echo $hours . ":" . $minutes . ":" . $seconds ;
