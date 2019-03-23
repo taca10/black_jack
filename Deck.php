@@ -21,10 +21,9 @@ class Deck
     public function drawCard() {
         $current = current($this->trump);
         if (!$current) {
-          echo "カードがありません";
+            echo "カードがありません";
         }
         next($this->trump);
-        echo $current . PHP_EOL;
         return $current;
     }
 }
